@@ -4,21 +4,21 @@ import InputField from './InputField'
 
 function Home() {
 
-  const newRef=useRef();
+  const newRef=useRef(null);
   const [values,setValues] = useState("")
 
   const settingValue = () => {
-
+   setValues(newRef.current.value)
   }
 
   const focusInput = () => {
-
+    newRef.current.focus()
   }
 
 
   return (
     <div>
-    <InputField  ref={newRef}  type="text"/>
+    <InputField ref={newRef}  type="text"/>
     <br/>
     <button id="settingValueButton" onClick={settingValue}>Set Value</button>
     <button id="focusInputButton" onClick={focusInput}>Focus the input</button><br/><br/>
